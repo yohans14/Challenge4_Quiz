@@ -10,7 +10,7 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: darkblue;
+    background-color: lightblue;
 }
 body.correct {
     background-color: darkgreen;
@@ -27,20 +27,23 @@ body.wrong {
     box-shadow: 0 0 10px 2px;
 }
 .btn-choice {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    justify-content: start;
     gap: 10px;
     margin: 20px 0;
+    color: black;
 
 }
 
 .btn {
-    background-color: darkblue;
+    background-color: lightblue;
     border: 1px solid;
     border-radius: 5px;
     padding: 5px 10px;
     color: white;
     outline: none;
+    color: black;
+    font-size: large;
 }
 .btn:hover {
     border-color: black;
