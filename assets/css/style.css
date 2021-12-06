@@ -11,12 +11,23 @@ body {
     justify-content: center;
     align-items: center;
     background-color: lightblue;
+    position: relative;
 }
 body.correct {
     background-color: darkgreen;
 }
 body.wrong {
     background-color: darkred;
+}
+.timer{
+   position: absolute;
+   top: 5%;
+   left: 5%;
+}
+.score{
+    position: absolute;
+    top: 5%;
+    right: 5%;
 }
 .container {
     width: 800px;
