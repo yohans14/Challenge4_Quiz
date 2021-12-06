@@ -2,20 +2,19 @@
 
 const startButton = document.getElementById('start-btn');
 
-const nextButton = document.getElementById('next-btn')
+const nextButton = document.getElementById('next-btn');
 
-const questionContainerElement = document.getElementById('question-container')
+const questionContainerElement = document.getElementById('question-container');
 
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-buttons');
+var scoreElement = document.getElementsByClassName('score');
+var timerElement = document.getElementsByClassName('timer');
 
-var timerElement = document.getElementsByClassName('timer')
+var shuffledQuestions, currentQuestionIndex;
+var time;
+var score;
 
-var shuffledQuestions, currentQuestionIndex
-var time
-var score
-
-var timer=questions.length * 15;
 
 startButton.addEventListener('click', startQuiz)
 nextButton.addEventListener('click', () => {
@@ -31,8 +30,8 @@ function startQuiz() {
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 
-    time = setInterval(timeleft,1000);
-    timerElement.textContent=timer;
+    // time = setInterval(timeleft,1000);
+    // timerElement.textContent=time;
 }
 
 function setNextQuestion() {
@@ -63,6 +62,10 @@ function resetState() {
     }
 }
 
+// var stopQuiz = function (){
+//     clearInterval(time);
+// }
+
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
@@ -75,11 +78,18 @@ function selectAnswer(e) {
     // show next button to go to next question 
       nextButton.classList.remove('hide')
     } else {
+        stopQuiz ()
         startButton.innerText = 'Save Score'
         startButton.classList.remove('hide')
     }
 }
+// var timerLeft = function (){
+//     timer--;
+//     timerElement.textContent=timer
 
+//     if (timer === 0){
+//         stopQuiz()
+//     }
 
 function setStatusClass(element, correct) {
     clearStatusClass(element)
